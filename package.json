@@ -1,0 +1,35 @@
+{
+  "name": "ult",
+  "version": "1.2.3",
+  "description": "The Ultimate Dev Stack",
+  "homepage": "https://ult.dev",
+  "license": "MIT",
+  "bin": {
+    "ult": "./bin/index.js"
+  },
+  "scripts": {
+    "new": "node ./bin/index.js",
+    "web": "node ./bin/index.js --web"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "fs-extra": "^8.1.0"
+  },
+  "repository": {
+    "url": "https://github.com/Cavitt/ult.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cavitt/ult/issues"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "redux",
+    "redux-saga",
+    "web",
+    "android",
+    "ios",
+    "macos",
+    "windows"
+  ]
+}
