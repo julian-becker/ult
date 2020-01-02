@@ -11,11 +11,6 @@
   "bugs": {
     "url": "https://github.com/kat-tax/ult/issues"
   },
-  "author": {
-    "name": "KATTAX",
-    "email": "admin@kat.tax",
-    "url": "https://kat.tax"
-  },
   "bin": {
     "ult": "./bin/index.js"
   },
