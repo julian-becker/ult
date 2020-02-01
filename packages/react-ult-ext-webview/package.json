@@ -23,7 +23,7 @@
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
-    "react-ult": "^0.0.9"
+    "react-ult": "^0.1.0"
   },
   "dependencies": {
     "react-native-webview": "^7.5.2"

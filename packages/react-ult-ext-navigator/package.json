@@ -23,11 +23,10 @@
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
-    "react-ult": "^0.0.9"
+    "react-ult": "^0.1.0"
   },
   "dependencies": {
     "lodash": "^4.17.15",
-    "react-ult": "0.0.9",
     "reactxp-experimental-navigation": "1.0.14",
     "rebound": "^0.1.0"
   },
