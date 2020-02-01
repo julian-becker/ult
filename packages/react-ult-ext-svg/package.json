@@ -21,7 +21,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm i && npm run build"
   },
   "peerDependencies": {
     "react-ult": "^0.1.0"
@@ -32,6 +32,7 @@
   "devDependencies": {
     "@types/node": "^12.12.14",
     "@types/react-native": "^0.60.23",
+    "react-ult": "^0.1.0",
     "typescript": "^3.7.3"
   },
   "gitHead": "c5a30d8a496b8bc7aa2c318df7d0402d55fc7feb"

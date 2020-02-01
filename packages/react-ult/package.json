@@ -22,7 +22,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm i && npm run build"
   },
   "peerDependencies": {
     "react": ">=16.3",
