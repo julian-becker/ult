@@ -27,5 +27,6 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "fs-extra": "^8.1.0"
-  }
+  },
+  "gitHead": "c5a30d8a496b8bc7aa2c318df7d0402d55fc7feb"
 }
