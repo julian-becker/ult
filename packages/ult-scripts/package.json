@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "name": "ult-scripts",
   "description": "Configuration and scripts for ULT",
   "types": "./lib/ult.d.ts",
