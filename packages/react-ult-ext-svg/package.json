@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "react-ult-ext-svg",
   "description": "ULT scalable-vector-graphics extension",
   "keywords": [
@@ -30,8 +30,8 @@
     "react-native-svg": "^9.13.3"
   },
   "devDependencies": {
-    "@types/react-native": "^0.60.23",
     "@types/node": "^12.12.14",
+    "@types/react-native": "^0.60.23",
     "typescript": "^3.7.3"
   }
 }

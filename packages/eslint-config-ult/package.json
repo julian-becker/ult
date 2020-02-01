@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "eslint-config-ult",
   "description": "Linting rules for ULT",
   "keywords": [
@@ -20,9 +20,9 @@
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.15.0",
+    "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint": "^6.8.0"
+    "eslint-plugin-react": "^7.17.0"
   },
   "dependencies": {
     "@typescript-eslint/parser": "^2.15.0"
