@@ -19,14 +19,14 @@
     "url": "https://github.com/kat-tax/ult/issues"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "react-ult": "^0.0.9"
   },
   "dependencies": {
-    "react-native-webview": "^7.5.2",
-    "react-ult": "0.0.9"
+    "react-native-webview": "^7.5.2"
   },
   "devDependencies": {
     "typescript": "3.7.2"

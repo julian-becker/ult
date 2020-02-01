@@ -20,7 +20,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "react": ">=16.3",

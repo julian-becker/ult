@@ -19,15 +19,15 @@
     "url": "https://github.com/kat-tax/ult/issues"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "react-ult": "^0.0.9"
   },
   "dependencies": {
     "lodash": "^4.17.15",
-    "react-native-video": "^5.0.2",
-    "react-ult": "0.0.9"
+    "react-native-video": "^5.0.2"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.149",
