@@ -1,0 +1,28 @@
+{
+  "name": "react-ult-ext-webview",
+  "description": "ULT webview extension",
+  "keywords": ["cross-platform", "react", "native", "stack", "ult"],
+  "homepage": "https://ult.dev",
+  "types": "dist/web/PluginBase.d.ts",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/kat-tax/ult.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kat-tax/ult/issues"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "react-ult": "^0.0.9"
+  },
+  "dependencies": {
+    "react-native-webview": "^7.5.2",
+    "react-ult": "0.0.9"
+  },
+  "devDependencies": {
+    "typescript": "3.7.2"
+  }
+}

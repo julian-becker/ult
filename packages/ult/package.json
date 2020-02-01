@@ -1,0 +1,24 @@
+{
+  "name": "ult",
+  "description": "The Ultimate Dev Stack",
+  "keywords": ["cross-platform", "react", "native", "stack", "ult"],
+  "homepage": "https://ult.dev",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/kat-tax/ult.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kat-tax/ult/issues"
+  },
+  "bin": {
+    "ult": "./bin/index.js"
+  },
+  "scripts": {
+    "new": "node ./bin/index.js",
+    "web": "node ./bin/index.js --web"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "fs-extra": "^8.1.0"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "react-ult-ext-svg",
+  "description": "ULT scalable-vector-graphics extension",
+  "keywords": ["cross-platform", "react", "native", "stack", "ult"],
+  "homepage": "https://ult.dev",
+  "types": "dist/web/PluginBase.d.ts",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/kat-tax/ult.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kat-tax/ult/issues"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "react-ult": "^0.0.9"
+  },
+  "dependencies": {
+    "react-native-svg": "^9.13.3"
+  },
+  "devDependencies": {
+    "@types/react-native": "^0.60.23",
+    "@types/node": "^12.12.14",
+    "typescript": "^3.7.3"
+  }
+}

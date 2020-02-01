@@ -1,0 +1,8 @@
+/node_modules
+/src/.vs
+/src/bin
+/src/obj
+/tests
+/extensions
+/docs
+*.user

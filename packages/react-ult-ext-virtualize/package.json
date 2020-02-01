@@ -1,0 +1,28 @@
+{
+  "name": "react-ult-ext-virtualize",
+  "description": "ULT virtualized (windowed) list extension",
+  "keywords": ["cross-platform", "react", "native", "stack", "ult"],
+  "homepage": "https://ult.dev",
+  "types": "dist/Virtualize.d.ts",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/kat-tax/ult.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kat-tax/ult/issues"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "react-ult": "^0.0.9"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.149",
+    "typescript": "^3.7.2"
+  }
+}
