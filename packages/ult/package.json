@@ -1,7 +1,14 @@
 {
+  "version": "0.1.0",
   "name": "ult",
   "description": "The Ultimate Dev Stack",
-  "keywords": ["cross-platform", "react", "native", "stack", "ult"],
+  "keywords": [
+    "cross-platform",
+    "react",
+    "native",
+    "stack",
+    "ult"
+  ],
   "homepage": "https://ult.dev",
   "license": "MIT",
   "repository": {
