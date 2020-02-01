@@ -4,7 +4,7 @@
     "lerna": "3.19.0"
   },
   "scripts": {
-    "release": "lerna publish",
-    "next": "lerna publish --dist-tag next"
+    "release": "lerna publish --skip-git",
+    "next": "lerna publish --dist-tag next --skip-git"
   }
 }
