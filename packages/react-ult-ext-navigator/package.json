@@ -1,7 +1,13 @@
 {
   "name": "react-ult-ext-navigator",
   "description": "ULT navigation extension",
-  "keywords": ["cross-platform", "react", "native", "stack", "ult"],
+  "keywords": [
+    "cross-platform",
+    "react",
+    "native",
+    "stack",
+    "ult"
+  ],
   "homepage": "https://ult.dev",
   "types": "dist/web/Navigator.d.ts",
   "main": "index.js",

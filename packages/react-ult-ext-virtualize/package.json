@@ -1,7 +1,13 @@
 {
   "name": "react-ult-ext-virtualize",
   "description": "ULT virtualized (windowed) list extension",
-  "keywords": ["cross-platform", "react", "native", "stack", "ult"],
+  "keywords": [
+    "cross-platform",
+    "react",
+    "native",
+    "stack",
+    "ult"
+  ],
   "homepage": "https://ult.dev",
   "types": "dist/Virtualize.d.ts",
   "main": "index.js",

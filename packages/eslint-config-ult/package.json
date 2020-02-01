@@ -1,7 +1,13 @@
 {
   "name": "eslint-config-ult",
   "description": "Linting rules for ULT",
-  "keywords": ["cross-platform", "react", "native", "stack", "ult"],
+  "keywords": [
+    "cross-platform",
+    "react",
+    "native",
+    "stack",
+    "ult"
+  ],
   "homepage": "https://ult.dev",
   "main": "index.js",
   "license": "MIT",

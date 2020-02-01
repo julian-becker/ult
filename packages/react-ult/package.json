@@ -1,7 +1,13 @@
 {
   "name": "react-ult",
   "description": "React compatibility layer that powers ULT",
-  "keywords": ["cross-platform", "react", "native", "stack", "ult"],
+  "keywords": [
+    "cross-platform",
+    "react",
+    "native",
+    "stack",
+    "ult"
+  ],
   "homepage": "https://ult.dev",
   "types": "dist/ULT.d.ts",
   "main": "index.js",

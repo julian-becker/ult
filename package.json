@@ -4,7 +4,7 @@
     "lerna": "3.19.0"
   },
   "scripts": {
-    "build": "cd packages/ult-scripts && node bin/ult-scripts.js build",
-    "start": "cd packages/ult-scripts && node bin/ult-scripts.js start"
+    "release": "lerna publish",
+    "next": "lerna publish --dist-tag next"
   }
 }
