@@ -5,7 +5,7 @@ const fs = require('fs');
 const url = require('url');
 
 // Make sure any symlinks in the project folder are resolved:
-// https://github.com/facebook/create-react-app/issues/637
+// https://github.com/facebook/create-ult-app/issues/637
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
@@ -109,8 +109,8 @@ module.exports = {
   // These properties only exist before ejecting:
   ownPath: resolveOwn('.'),
   ownNodeModules: resolveOwn('node_modules'), // This is empty on npm 3
-  appTypeDeclarations: resolveApp('src/react-app-env.d.ts'),
-  ownTypeDeclarations: resolveOwn('lib/react-app.d.ts'),
+  appTypeDeclarations: resolveApp('src/ult-app-env.d.ts'),
+  ownTypeDeclarations: resolveOwn('lib/ult-app.d.ts'),
 };
 
 const ownPackageJson = require('../package.json');
@@ -145,8 +145,8 @@ if (
     // These properties only exist before ejecting:
     ownPath: resolveOwn('.'),
     ownNodeModules: resolveOwn('node_modules'),
-    appTypeDeclarations: resolveOwn(`${templatePath}/src/react-app-env.d.ts`),
-    ownTypeDeclarations: resolveOwn('lib/react-app.d.ts'),
+    appTypeDeclarations: resolveOwn(`${templatePath}/src/ult-app-env.d.ts`),
+    ownTypeDeclarations: resolveOwn('lib/ult-app.d.ts'),
   };
 }
 // @remove-on-eject-end

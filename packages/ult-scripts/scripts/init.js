@@ -89,12 +89,12 @@ module.exports = function(
     console.log('');
     console.error(
       `A template was not provided. This is likely because you're using an outdated version of ${chalk.cyan(
-        'create-react-app'
+        'ult'
       )}.`
     );
     console.error(
       `Please note that global installs of ${chalk.cyan(
-        'create-react-app'
+        'ult'
       )} are no longer supported.`
     );
     return;
