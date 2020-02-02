@@ -1,21 +1,12 @@
 // @remove-file-on-eject
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-'use strict';
-
-const chalk = require('react-dev-utils/chalk');
 const fs = require('fs');
-const resolve = require('resolve');
-const path = require('path');
-const paths = require('../../config/paths');
 const os = require('os');
-const immer = require('react-dev-utils/immer').produce;
+const path = require('path');
+const resolve = require('resolve');
+const chalk = require('react-dev-utils/chalk');
 const globby = require('react-dev-utils/globby').sync;
+const immer = require('react-dev-utils/immer').produce;
+const paths = require('../../config/paths');
 
 function writeJson(fileName, object) {
   fs.writeFileSync(

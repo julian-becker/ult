@@ -1,5 +1,3 @@
-'use strict';
-
 const fs = require('fs');
 const path = require('path');
 const paths = require('./paths');
@@ -18,10 +16,7 @@ if (!NODE_ENV) {
 const dotenvFiles = [
   `${paths.dotenv}.${NODE_ENV}.local`,
   `${paths.dotenv}.${NODE_ENV}`,
-  // Don't include `.env.local` for `test` environment
-  // since normally you expect tests to produce the same
-  // results for everyone
-  NODE_ENV !== 'test' && `${paths.dotenv}.local`,
+  `${paths.dotenv}.local`,
   paths.dotenv,
 ].filter(Boolean);
 
@@ -87,7 +82,7 @@ function getClientEnvironment(publicUrl) {
     }, {}),
   };
 
-  return { raw, stringified };
+  return {raw, stringified};
 }
 
 module.exports = getClientEnvironment;

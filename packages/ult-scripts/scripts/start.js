@@ -1,6 +1,3 @@
-
-'use strict';
-
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
@@ -25,22 +22,16 @@ verifyTypeScriptSetup();
 // @remove-on-eject-end
 
 const fs = require('fs');
-const chalk = require('react-dev-utils/chalk');
 const webpack = require('webpack');
+const chalk = require('react-dev-utils/chalk');
 const WebpackDevServer = require('webpack-dev-server');
+const openBrowser = require('react-dev-utils/openBrowser');
 const clearConsole = require('react-dev-utils/clearConsole');
 const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
-const {
-  choosePort,
-  createCompiler,
-  prepareProxy,
-  prepareUrls,
-} = require('react-dev-utils/WebpackDevServerUtils');
-const openBrowser = require('react-dev-utils/openBrowser');
-const paths = require('../config/paths');
-const configFactory = require('../config/webpack.config');
+const {choosePort, createCompiler, prepareProxy, prepareUrls} = require('react-dev-utils/WebpackDevServerUtils');
 const createDevServerConfig = require('../config/webpackDevServer.config');
-
+const configFactory = require('../config/webpack.config');
+const paths = require('../config/paths');
 const useYarn = fs.existsSync(paths.yarnLockFile);
 const isInteractive = process.stdout.isTTY;
 

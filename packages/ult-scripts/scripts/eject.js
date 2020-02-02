@@ -1,12 +1,4 @@
 // @remove-file-on-eject
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-'use strict';
-
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
 // terminate the Node.js process with a non-zero exit code.
@@ -19,7 +11,6 @@ const path = require('path');
 const execSync = require('child_process').execSync;
 const chalk = require('react-dev-utils/chalk');
 const paths = require('../config/paths');
-const createJestConfig = require('./utils/createJestConfig');
 const inquirer = require('react-dev-utils/inquirer');
 const spawnSync = require('react-dev-utils/crossSpawn').sync;
 const os = require('os');
@@ -98,76 +89,6 @@ inquirer
 
     const ownPath = paths.ownPath;
     const appPath = paths.appPath;
-
-    function verifyAbsent(file) {
-      if (fs.existsSync(path.join(appPath, file))) {
-        console.error(
-          `\`${file}\` already exists in your app folder. We cannot ` +
-            'continue as you would lose all the changes in that file or directory. ' +
-            'Please move or delete it (maybe make a copy for backup) and run this ' +
-            'command again.'
-        );
-        process.exit(1);
-      }
-    }
-
-    const folders = ['config', 'config/jest', 'scripts'];
-
-    // Make shallow array of files paths
-    const files = folders.reduce((files, folder) => {
-      return files.concat(
-        fs
-          .readdirSync(path.join(ownPath, folder))
-          // set full path
-          .map(file => path.join(ownPath, folder, file))
-          // omit dirs from file list
-          .filter(file => fs.lstatSync(file).isFile())
-      );
-    }, []);
-
-    // Ensure that the app folder is clean and we won't override any files
-    folders.forEach(verifyAbsent);
-    files.forEach(verifyAbsent);
-
-    // Prepare Jest config early in case it throws
-    const jestConfig = createJestConfig(
-      filePath => path.posix.join('<rootDir>', filePath),
-      null,
-      true
-    );
-
-    console.log();
-    console.log(cyan(`Copying files into ${appPath}`));
-
-    folders.forEach(folder => {
-      fs.mkdirSync(path.join(appPath, folder));
-    });
-
-    files.forEach(file => {
-      let content = fs.readFileSync(file, 'utf8');
-
-      // Skip flagged files
-      if (content.match(/\/\/ @remove-file-on-eject/)) {
-        return;
-      }
-      content =
-        content
-          // Remove dead code from .js files on eject
-          .replace(
-            /\/\/ @remove-on-eject-begin([\s\S]*?)\/\/ @remove-on-eject-end/gm,
-            ''
-          )
-          // Remove dead code from .applescript files on eject
-          .replace(
-            /-- @remove-on-eject-begin([\s\S]*?)-- @remove-on-eject-end/gm,
-            ''
-          )
-          .trim() + '\n';
-      console.log(`  Adding ${cyan(file.replace(ownPath, ''))} to the project`);
-      fs.writeFileSync(file.replace(ownPath, appPath), content);
-    });
-    console.log();
-
     const ownPackage = require(path.join(ownPath, 'package.json'));
     const appPackage = require(path.join(appPath, 'package.json'));
 
@@ -228,9 +149,6 @@ inquirer
 
     console.log();
     console.log(cyan('Configuring package.json'));
-    // Add Jest config
-    console.log(`  Adding ${cyan('Jest')} configuration`);
-    appPackage.jest = jestConfig;
 
     // Add Babel config
     console.log(`  Adding ${cyan('Babel')} preset`);
