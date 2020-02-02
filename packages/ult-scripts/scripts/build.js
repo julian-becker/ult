@@ -1,11 +1,4 @@
-// @remove-on-eject-begin
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-// @remove-on-eject-end
+
 'use strict';
 
 // Do this as the first thing so that any code reading it knows the right env.
@@ -168,16 +161,7 @@ function build(previousFileSizes) {
         if (!err.message) {
           return reject(err);
         }
-
         let errMessage = err.message;
-
-        // Add additional information for postcss errors
-        if (Object.prototype.hasOwnProperty.call(err, 'postcssNode')) {
-          errMessage +=
-            '\nCompileError: Begins at CSS selector ' +
-            err['postcssNode'].selector;
-        }
-
         messages = formatWebpackMessages({
           errors: [errMessage],
           warnings: [],
