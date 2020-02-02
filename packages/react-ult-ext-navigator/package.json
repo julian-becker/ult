@@ -34,6 +34,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.149",
     "@types/node": "^12.12.14",
+    "@types/react-dom": "^16.9.5",
     "@types/react-native": "^0.60.23",
     "react-ult": "^0.0.9",
     "typescript": "^3.7.2"
