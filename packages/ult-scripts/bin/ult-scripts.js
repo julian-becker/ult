@@ -1,8 +1,12 @@
+#!/usr/bin/env node
+
 const spawn = require('react-dev-utils/crossSpawn');
-const script = index === -1 ? args[0] : args[index];
-const index = args.findIndex(x => x === 'build' || x === 'start');
 const args = process.argv.slice(2);
+const index = args.findIndex(x => x === 'build' || x === 'start');
+const script = index === -1 ? args[0] : args[index];
+
 process.on('unhandledRejection', err => {throw err});
+
 if (['build', 'start'].includes(script)) {
   const result = spawn.sync('node', index > 0 ? args.slice(0, index) : []
     .concat(require.resolve('../scripts/' + script))

@@ -8,12 +8,11 @@ function getAdditionalModulePaths(options = {}) {
   const baseUrl = options.baseUrl;
   const baseUrlResolved = path.resolve(paths.appPath, baseUrl);
 
-  // We don't need to do anything if `baseUrl` is set to `node_modules`. This is
-  // the default behavior.
+  // We don't need to do anything if `baseUrl` is set to `node_modules`
   if (path.relative(paths.appNodeModules, baseUrlResolved) === '')
     return null;
 
-  // Allow the user set the `baseUrl` to `appSrc`.
+  // Allow the user set the `baseUrl` to `appSrc`
   if (path.relative(paths.appSrc, baseUrlResolved) === '')
     return [paths.appSrc];
 
@@ -24,7 +23,7 @@ function getAdditionalModulePaths(options = {}) {
   if (path.relative(paths.appPath, baseUrlResolved) === '')
     return null;
 
-  // Otherwise, throw an error.
+  // Otherwise, throw an error
   throw new Error(chalk.red.bold("Your project's `baseUrl` can only be set to `src` or `node_modules`."));
 }
 

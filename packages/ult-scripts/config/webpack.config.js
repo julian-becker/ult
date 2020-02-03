@@ -16,10 +16,10 @@ const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpack
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const getCacheIdentifier = require('react-dev-utils/getCacheIdentifier');
-const appPackageJson = require(paths.appPackageJson);
 const getClientEnvironment = require('./env');
 const modules = require('./modules');
 const paths = require('./paths');
+const appPackageJson = require(paths.appPackageJson);
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
