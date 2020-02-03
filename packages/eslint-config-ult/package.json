@@ -1,6 +1,6 @@
 {
-  "version": "0.1.3",
   "name": "eslint-config-ult",
+  "version": "0.1.4",
   "description": "Linting rules for ULT",
   "keywords": [
     "cross-platform",
