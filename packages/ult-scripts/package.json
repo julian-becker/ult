@@ -1,30 +1,18 @@
 {
   "name": "ult-scripts",
-  "version": "0.1.4",
   "description": "Configuration and scripts for ULT",
-  "types": "./lib/ult.d.ts",
+  "version": "0.1.4",
   "license": "MIT",
+  "types": "./lib/ult.d.ts",
+  "bin": {
+    "ult-scripts": "./bin/ult-scripts.js"
+  },
   "files": [
     "bin",
     "config",
     "lib",
     "scripts"
   ],
-  "bin": {
-    "ult-scripts": "./bin/ult-scripts.js"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "dependencies": {
     "@babel/core": "7.7.5",
     "babel-loader": "8.0.6",
