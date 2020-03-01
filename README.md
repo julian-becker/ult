@@ -1,7 +1,7 @@
 # ULT · The Ultimate Dev Stack
 
 <a alt="ULT Website" href="https://ult.dev">
-  <img align="right" width="373" src="https://raw.githubusercontent.com/kat-tax/ult/master/_layouts/cover.png">
+  <img align="right" width="373" src="https://raw.githubusercontent.com/kat-tax/ult/master/_layouts/social.png">
 </a>
 
 #### Cross-platform development with a single code base!
@@ -20,11 +20,13 @@ After everything installs, use `npm run [task]`
 | ios           | Start iOS Development                               |
 | macos         | Start MacOS Development                             |
 | windows       | Start Windows Development                           |
-| build         | Build Production Web Bundle                         |
-| test          | Run Unit Tests                                      |
-| analyze       | Analyze Web Bundle                                  |
+| build         | Build Web Bundle                                    |
+| build-android | Build Android APK                                   |
+| build-ios     | Build iOS App                                       |
+| build-macos   | Build MacOS App                                     |
+| build-windows | Build Windows EXE                                   |
 
-### Stack
+### Technologies
 
 - [TypeScript](https://www.typescriptlang.org/) *(Language)*
 - [React](https://reactjs.org/) *(View Abstraction)*
