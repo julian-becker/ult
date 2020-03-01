@@ -12,6 +12,8 @@ After everything installs, use `npm run [task]`
 
 *For more details, visit the [documentation](https://docs.ult.dev)*
 
+*If you have questions, [create an issue](https://github.com/kat-tax/ult/issues/new/choose)*
+
 
 | Task          | Description                                         |
 | --------------| --------------------------------------------------- |
