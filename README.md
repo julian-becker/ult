@@ -1,7 +1,7 @@
 # ULT · The Ultimate Dev Stack
 
 <a alt="ULT Website" href="https://ult.dev">
-  <img align="right" width="373" src="https://raw.githubusercontent.com/kat-tax/ult/master/_layouts/social.png">
+  <img align="right" width="373" src="https://raw.githubusercontent.com/kat-tax/ult/master/_layouts/banner.png">
 </a>
 
 #### Cross-platform development with a single code base!
