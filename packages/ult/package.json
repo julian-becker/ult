@@ -1,6 +1,6 @@
 {
   "name": "ult",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "The Ultimate Dev Stack",
   "keywords": [
     "cross-platform",
@@ -25,8 +25,7 @@
     "web": "node ./bin/index.js --web"
   },
   "dependencies": {
-    "chalk": "^3.0.0",
-    "fs-extra": "^8.1.0"
+    "chalk": "^3.0.0"
   },
   "gitHead": "1256e6549432aa4eba9603b1a7ab8b92c3ff01c7"
 }

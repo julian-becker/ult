@@ -12,6 +12,7 @@ async function main() {
   const tpl = process.argv[custom ? 2 : 3];
   const name = project && project.trim();
   const template = tpl ? tpl.substr(2) : 'default';
+  const interface = {input: process.stdin, output: process.stdout};
 
   if (!name)
     return error('Project name is missing. (e.g. npx ult Demo)');
@@ -25,30 +26,24 @@ async function main() {
   try {
     console.log('Creating new project, please wait...');
     await create(name, template);
-    if (template !== 'web') {
-      console.log('Initializing react native...');
-      await native(name);
-    }
 
     const question = 'Would you like to install the dependencies? (Y/n) ';
-    const rl = readline.createInterface({
-      input: process.stdin,
-      output: process.stdout
-    });
-
+    const rl = readline.createInterface(interface);
     rl.question(chalk.bold(question), async (answer) => {
       if (answer.toLowerCase() === 'y') {
         console.log('Installing, this may take awhile...');
         try {
+          if (template !== 'web')
+            await native(name);
           await install(name);
-          success(name, template, true);
+          complete(name, template, true);
         } catch (e) {
-          success(name, template, false, true);
+          complete(name, template, false, true);
         } finally {
           rl.close();
         }
       } else {
-        success(name, template, false);
+        complete(name, template, false);
         rl.close();
       }
     });
@@ -57,11 +52,7 @@ async function main() {
   }
 }
 
-function error(...messages) {
-  console.log(chalk.red(...messages));
-}
-
-function success(name, template, deps, depsFailed) {
+function complete(name, template, deps, depsFailed) {
   if (depsFailed) {
     console.log(chalk.red('Failed to install dependencies.'));
   } else {
@@ -91,6 +82,10 @@ function success(name, template, deps, depsFailed) {
     console.log(`$ ${chalk.yellow('npm run windows')}`);
   }
   console.log(chalk.blue('\nFor more details, visit https://docs.ult.dev'));
+}
+
+function error(...messages) {
+  console.log(chalk.red(...messages));
 }
 
 main();

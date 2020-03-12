@@ -1,22 +1,21 @@
 const path = require('path');
-const fs = require('fs-extra');
+const spawn = require('child_process').spawn;
 
-module.exports = async(name, template) => {
-  try {
-    const cwd = `${process.cwd()}/${name.toLowerCase()}`;
-    const src = path.dirname(fs.realpathSync(__filename));
-    const app = {name: name.toLowerCase(), displayName: name};
-    await fs.outputJson(`${cwd}/app.json`, app, {spaces: 2});
-    await fs.copy(path.resolve(src, `../tpl/${template}`), cwd, {
-      overwrite: false,
-      errorOnExist: true,
-      preserveTimestamps: true,
+module.exports = (name, template) => {
+  return new Promise((resolve, reject) => {
+    const base = process.cwd();
+    const slug = name.toLowerCase();
+    const init = spawn('git', ['init', slug], {cwd: base});
+    init.once('exit', i => {
+      if (i === 0) {
+        const root = path.resolve(base, slug);
+        const user = 'https://github.com/kat-tax';
+        const repo = `${user}/ult-template-${template}.git`;
+        const pull = spawn('git', ['pull', repo], {cwd: root});
+        pull.once('exit', p => (p === 0 ? resolve() : reject(p)));
+      } else {
+        reject(i);
+      }
     });
-  } catch (e) {
-    if (e.toString().indexOf('already exists') !== -1) {
-      throw new Error('Directory already exists.');
-    } else {
-      throw new Error(e);
-    }
-  }
-};
+  });
+}

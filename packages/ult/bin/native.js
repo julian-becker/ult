@@ -1,6 +1,5 @@
 const path = require('path');
 const spawn = require('child_process').spawn;
-const config = require('../config');
 
 module.exports = name => {
   return new Promise((resolve, reject) => {
@@ -10,8 +9,8 @@ module.exports = name => {
       'npx',
       'react-native',
       'init',
-      '--version',
-      config.deps['react-native'].replace(/\^/, ''),
+      // '--version',
+      // config.deps['react-native'].replace(/\^/, ''),
     ], {cwd});
     npm.once('exit', e => (e === 0 ? resolve() : reject(e)));
   });
