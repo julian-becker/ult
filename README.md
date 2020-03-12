@@ -23,19 +23,16 @@ After everything installs, use `npm run [task]`
 | macos         | Start the MacOS development server                  |
 | windows       | Start the Windows development server                |
 | build         | Build a production Web bundle                       |
-| build-android | Build a production Android APK                      |
-| build-ios     | Build a production iOS App                          |
-| build-macos   | Build a production MacOS App                        |
-| build-windows | Build a production Windows EXE                      |
+| build-android | Build a production Android app                      |
+| build-ios     | Build a production iOS app                          |
+| build-macos   | Build a production MacOS app                        |
+| build-windows | Build a production Windows executable               |
 
 ### Technologies
 
-- [TypeScript](https://www.typescriptlang.org/) *(Language)*
+- [React](https://reactjs.org/) *(View Abstraction)*
 - [Webpack](https://webpack.js.org/) *(Web Bundler)*
 - [Metro](https://facebook.github.io/metro/) *(Native Bundler)*
-- [React](https://reactjs.org/) *(View Abstraction)*
-- [React Native](https://facebook.github.io/react-native/) *(iOS & Android Support)*
-- [React Native Windows](https://github.com/Microsoft/react-native-windows) *(Windows Support)*
 
 ### Community
 
@@ -55,4 +52,3 @@ Fund development by being a [Sponsor](https://github.com/sponsors/Cavitt)!
     <li>No other framework lets us natively target desktop and mobile, while maintaining web support.</li>
   </ul>
 </details>
-
