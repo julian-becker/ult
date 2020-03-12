@@ -28,6 +28,14 @@ After everything installs, use `npm run [task]`
 | build-macos   | Build a production MacOS app                        |
 | build-windows | Build a production Windows executable               |
 
+### Features
+- Native cross-platform UI
+- Great Accessibility
+- Small bundle size
+- Typed Styles
+- Animations
+- Extensions
+
 ### Technologies
 
 - [TypeScript](https://www.typescriptlang.org/) *(Language)*
