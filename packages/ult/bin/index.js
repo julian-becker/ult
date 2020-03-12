@@ -7,11 +7,11 @@ const install = require('./install');
 const native = require('./native');
 
 async function main() {
-  const custom = !!process.argv[3];
-  const project = process.argv[custom ? 3 : 2];
-  const tpl = process.argv[custom ? 2 : 3];
-  const name = project && project.trim();
-  const template = tpl ? tpl.substr(2) : 'default';
+  const args = process.argv.slice(2);
+  const opts = args.find(e => e.slice(0,2) !== '--');
+  const flag = args.find(e => e.slice(0,2) === '--');
+  const name = opts ? opts.trim() : '';
+  const template = flag ? flag.substr(2) : 'default';
   const interface = {input: process.stdin, output: process.stdout};
 
   if (!name)
@@ -48,7 +48,7 @@ async function main() {
       }
     });
   } catch (e) {
-    error('Failed to create project.\n>', e.toString().trim());
+    error(`Failed to create project. (code: ${e})>`);
   }
 }
 
