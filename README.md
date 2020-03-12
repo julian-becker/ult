@@ -56,7 +56,7 @@ After everything installs, use `npm run [task]`
   - [Spinner](https://docs.ult.dev/components/spinner) *(displays an animated “spinner”)*
   - [Image](https://docs.ult.dev/components/image) *(displays a local or remote image)*
   - [SVG](https://docs.ult.dev/components/svg) *(displays scalable vector graphics)*
-  - [Video](https://docs.ult.dev/components/video) *(a cross-platform video player with playback controls)*
+  - [Video](https://docs.ult.dev/components/video) *(cross-platform video player with playback controls)*
   - [WebView](https://docs.ult.dev/components/web-view) *(displays HTML contents in an embedded browser or iframe)*
   - [Virtualize](https://docs.ult.dev/components/virtual-view) *(performant scrolling for a large number of items in a list)*
 - Services
@@ -70,7 +70,7 @@ After everything installs, use `npm run [task]`
   - [Linking](https://docs.ult.dev/services/linking) *(provides deep linking in both incoming and outgoing directions)*
   - [Alert](https://docs.ult.dev/services/alert) *(displays an OS-specific alert over the top of the current screen)*
   - [Modal](https://docs.ult.dev/services/modal) *(displays a view that overlays all other views rendered by the app)*
-  - [Popup](https://docs.ult.dev/services/popup) *(display a view that overlays a portion of the screen)*
+  - [Popup](https://docs.ult.dev/services/popup) *(displays a view that overlays a portion of the screen)*
   - [StatusBar](https://docs.ult.dev/services/status-bar) *(provides control over the status bar on mobile platforms)*
   - [UserInput](https://docs.ult.dev/services/user-input) *(provides events that are triggered based on user input)*
   - [UserInterface](https://docs.ult.dev/services/user-interface) *(provides a variety of UI-related methods)*
