@@ -17,26 +17,25 @@ After everything installs, use `npm run [task]`
 
 | Task          | Description                                         |
 | --------------| --------------------------------------------------- |
-| web           | Start Web Development                               |
-| android       | Start Android Development                           |
-| ios           | Start iOS Development                               |
-| macos         | Start MacOS Development                             |
-| windows       | Start Windows Development                           |
-| build         | Build Web Bundle                                    |
-| build-android | Build Android APK                                   |
-| build-ios     | Build iOS App                                       |
-| build-macos   | Build MacOS App                                     |
-| build-windows | Build Windows EXE                                   |
+| web           | Start the Web development server                    |
+| android       | Start the Android development server                |
+| ios           | Start the iOS development server                    |
+| macos         | Start the MacOS development server                  |
+| windows       | Start the Windows development server                |
+| build         | Build a production Web bundle                       |
+| build-android | Build a production Android APK                      |
+| build-ios     | Build a production iOS App                          |
+| build-macos   | Build a production MacOS App                        |
+| build-windows | Build a production Windows EXE                      |
 
 ### Technologies
 
 - [TypeScript](https://www.typescriptlang.org/) *(Language)*
-- [React](https://reactjs.org/) *(View Abstraction)*
-- [Redux](https://redux.js.org/) *(State Management)*
-- [React Native](https://facebook.github.io/react-native/) *(iOS & Android Support)*
-- [React Native Windows](https://github.com/Microsoft/react-native-windows) *(Windows Support)*
 - [Webpack](https://webpack.js.org/) *(Web Bundler)*
 - [Metro](https://facebook.github.io/metro/) *(Native Bundler)*
+- [React](https://reactjs.org/) *(View Abstraction)*
+- [React Native](https://facebook.github.io/react-native/) *(iOS & Android Support)*
+- [React Native Windows](https://github.com/Microsoft/react-native-windows) *(Windows Support)*
 
 ### Community
 
@@ -54,14 +53,5 @@ Fund development by being a [Sponsor](https://github.com/sponsors/Cavitt)!
     <li>Most other options are specific to the web.</li>
     <li>Flutter doesn't support desktop, and while the code is native, it only emulates native UI.</li>
     <li>No other framework lets us natively target desktop and mobile, while maintaining web support.</li>
-  </ul>
-</details>
-<details>
-  <summary>Why choose Redux over XYZ?</summary>
-  <ul>
-    <li>A leading problem people seem to have is the <em>boilerplate</em>, which has been reduced down as much as possible.</li>
-    <li>It's simple, intuitive, allows hot-reloading, time-traveling, and of course supports <a href="https://github.com/reduxjs/redux-devtools" rel="nofollow">redux-devtools</a>!</li>
-    <li>It's necessary to be able to snapshot the state of the app.</li>
-    <li>If you love Observables, this project is not for you.</li>
   </ul>
 </details>
