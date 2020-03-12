@@ -1,11 +1,9 @@
 # ULT · The Ultimate Dev Stack
-
 <a alt="ULT Website" href="https://ult.dev">
   <img align="right" width="373" src="https://raw.githubusercontent.com/kat-tax/ult/master/_layouts/banner.png">
 </a>
 
 #### Cross-platform development with a single code base!
-
 To create a new project, run `npx ult [project]` 
 
 After everything installs, use `npm run [task]`
@@ -27,6 +25,16 @@ After everything installs, use `npm run [task]`
 | build-ios     | Build a production iOS app                          |
 | build-macos   | Build a production MacOS app                        |
 | build-windows | Build a production Windows executable               |
+
+### Technologies
+- [TypeScript](https://www.typescriptlang.org/) *(Language)*
+- [Webpack](https://webpack.js.org/) *(Web Bundler)*
+- [Metro](https://facebook.github.io/metro/) *(Native Bundler)*
+- [React](https://reactjs.org/) *(View Abstraction)*
+- Bring your own state library!
+  - [Redux](https://redux.js.org/)
+  - [MobX](https://mobx.js.org/)
+  - [XState](https://xstate.js.org/)
 
 ### Features
 - Native cross-platform UI
@@ -70,27 +78,13 @@ After everything installs, use `npm run [task]`
   - [Network](https://docs.ult.dev/services/network) *(provides access to the device’s network data)*
   - [Navigator](https://docs.ult.dev/services/navigator) *(provides an advanced router supporting transitions)*
 
-### Technologies
-
-- [TypeScript](https://www.typescriptlang.org/) *(Language)*
-- [Webpack](https://webpack.js.org/) *(Web Bundler)*
-- [Metro](https://facebook.github.io/metro/) *(Native Bundler)*
-- [React](https://reactjs.org/) *(View Abstraction)*
-- Bring your own state library!
-  - [Redux](https://redux.js.org/)
-  - [MobX](https://mobx.js.org/)
-  - [XState](https://xstate.js.org/)
-
 ### Community
-
 Join the discussion in [Discord](https://discord.gg/TzhDRyj)!
 
 ### Sponsors
-
 Fund development by being a [Sponsor](https://github.com/sponsors/Cavitt)!
 
 ### FAQ
-
 <details>
   <summary>Why choose React over XYZ?</summary>
   <ul>
