@@ -26,16 +26,6 @@ After everything installs, use `npm run [task]`
 | build-macos   | Build a production MacOS app                        |
 | build-windows | Build a production Windows executable               |
 
-### Technologies
-- [TypeScript](https://www.typescriptlang.org/) *(Language)*
-- [Webpack](https://webpack.js.org/) *(Web Bundler)*
-- [Metro](https://facebook.github.io/metro/) *(Native Bundler)*
-- [React](https://reactjs.org/) *(View Abstraction)*
-- Bring your own state library!
-  - [Redux](https://redux.js.org/)
-  - [MobX](https://mobx.js.org/)
-  - [XState](https://xstate.js.org/)
-
 ### Features
 - ⚛ Native cross-platform UI
 - ♾ Flexible architecture
@@ -77,6 +67,16 @@ After everything installs, use `npm run [task]`
   - [UserPresence](https://docs.ult.dev/services/user-presence) *(provides information about whether the user is currently present)*
   - [Network](https://docs.ult.dev/services/network) *(provides access to the device’s network data)*
   - [Navigator](https://docs.ult.dev/services/navigator) *(provides an advanced router supporting transitions)*
+
+### Technologies
+- [TypeScript](https://www.typescriptlang.org/) *(Language)*
+- [Webpack](https://webpack.js.org/) *(Web Bundler)*
+- [Metro](https://facebook.github.io/metro/) *(Native Bundler)*
+- [React](https://reactjs.org/) *(View Abstraction)*
+- Bring your own state library!
+  - [Redux](https://redux.js.org/)
+  - [MobX](https://mobx.js.org/)
+  - [XState](https://xstate.js.org/)
 
 ### Community
 Join the discussion in [Discord](https://discord.gg/TzhDRyj)!
