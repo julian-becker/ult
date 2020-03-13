@@ -77,6 +77,7 @@ After everything installs, use `npm run [task]`
   - [Redux](https://redux.js.org/)
   - [MobX](https://mobx.js.org/)
   - [XState](https://xstate.js.org/)
+  - [Refract](https://refract.js.org/)
 
 ### Community
 Join the discussion in [Discord](https://discord.gg/TzhDRyj)!
