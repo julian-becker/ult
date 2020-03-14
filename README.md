@@ -74,10 +74,10 @@ After everything installs, use `npm run [task]`
 
 ### Technologies
 
-- [TypeScript](https://www.typescriptlang.org/) *(Language)*
-- [Webpack](https://webpack.js.org/) *(Web Bundler)*
-- [Metro](https://facebook.github.io/metro/) *(Native Bundler)*
-- [React](https://reactjs.org/) *(View Abstraction)*
+- [TypeScript](https://www.typescriptlang.org/) *(language)*
+- [Webpack](https://webpack.js.org/) *(web bundler)*
+- [Metro](https://facebook.github.io/metro/) *(native bundler)*
+- [React](https://reactjs.org/) *(view abstraction)*
 - Bring your own state library!
   - [Redux](https://redux.js.org/)
   - [MobX](https://mobx.js.org/)
