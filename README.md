@@ -31,7 +31,7 @@ After everything installs, use `npm run [task]`
 
 ### Features
 
-- ⚛ **Native cross-platform UI** *(via react-native)*
+- ⚛ **Native cross-platform UI**
 - ♾ **Flexible architecture**
 - ♿ **Great accessibility**
 - 📦 **Small bundle**
