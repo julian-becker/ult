@@ -12,26 +12,26 @@ After everything installs, use `npm run [task]`
 
 *If you have questions, [create an issue](https://github.com/kat-tax/ult/issues/new/choose)*
 
-
-| Task          | Description                                         |
-| --------------| --------------------------------------------------- |
-| web           | Start the Web development server                    |
-| android       | Start the Android development server                |
-| ios           | Start the iOS development server                    |
-| macos         | Start the MacOS development server                  |
-| windows       | Start the Windows development server                |
-| build         | Build a production Web bundle                       |
-| build-android | Build a production Android app                      |
-| build-ios     | Build a production iOS app                          |
-| build-macos   | Build a production MacOS app                        |
-| build-windows | Build a production Windows executable               |
+### Tasks
+| Command               | Description                                         |
+| ----------------------| --------------------------------------------------- |
+| npm run web           | Start the Web development server                    |
+| npm run android       | Start the Android development server                |
+| npm run ios           | Start the iOS development server                    |
+| npm run macos         | Start the MacOS development server                  |
+| npm run windows       | Start the Windows development server                |
+| npm run build         | Build a production Web bundle                       |
+| npm run build-android | Build a production Android app                      |
+| npm run build-ios     | Build a production iOS app                          |
+| npm run build-macos   | Build a production MacOS app                        |
+| npm run build-windows | Build a production Windows executable               |
 
 ### Features
-- ⚛ Native cross-platform UI
+- ⚛ Native cross-platform view
+- ✏ Typed components & styles
 - ♾ Flexible architecture
 - ♿ Great accessibility
-- 📦 Small bundle size
-- ✏ Typed styles
+- 📦 Small bundle
 - 🎥 Animations
 - 🔗 Extensions
 - 🧩 Components
