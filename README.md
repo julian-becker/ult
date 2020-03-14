@@ -27,7 +27,7 @@ After everything installs, use `npm run [task]`
 | npm run build-windows | Build a production Windows executable               |
 
 ### Features
-- ⚛ Native cross-platform view
+- ⚛ Native cross-platform UI
 - ♾ Flexible architecture
 - ♿ Great accessibility
 - 📦 Small bundle
