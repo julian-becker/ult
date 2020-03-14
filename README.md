@@ -31,7 +31,7 @@ After everything installs, use `npm run [task]`
 - ♾ Flexible architecture
 - ♿ Great accessibility
 - 📦 Small bundle size
-- ✨ Typed styles
+- ✏ Typed styles
 - 🎥 Animations
 - 🔗 Extensions
 - 🧩 Components
