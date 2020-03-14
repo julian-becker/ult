@@ -9,9 +9,8 @@ module.exports = (name, template) => {
     init.once('exit', i => {
       if (i === 0) {
         const root = path.resolve(base, slug);
-        const user = 'https://github.com/kat-tax';
-        const repo = `${user}/ult-template-${template}.git`;
-        const pull = spawn('git', ['pull', repo], {cwd: root});
+        const repo = 'https://github.com/kat-tax/ult-template.git';
+        const pull = spawn('git', ['pull', repo, template], {cwd: root});
         pull.once('exit', p => (p === 0 ? resolve() : reject(p)));
       } else {
         reject(i);
