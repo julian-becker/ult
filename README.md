@@ -31,14 +31,14 @@ After everything installs, use `npm run [task]`
 
 ### Features
 
-- ⚛ **Native cross-platform UI**
-- ♾ **Flexible architecture**
-- ♿ **Great accessibility**
-- 📦 **Small bundle**
-- ✨ **Typed styles**
-- 🎥 **Animations**
-- 🔗 **Extensions**
-- 🧩 **Components**
+- ⚛ Native cross-platform UI
+- ♾ Flexible architecture
+- ♿ Great accessibility
+- 📦 Small bundle
+- ✨ Typed styles
+- 🎥 Animations
+- 🔗 Extensions
+- 🧩 Components
   - [View](https://docs.ult.dev/components/view) *(container for other components)*
   - [Scroll](https://docs.ult.dev/components/scroll-view) *(container that supports scrolling off-screen content)*
   - [Gesture](https://docs.ult.dev/components/gesture-view) *(container with advanced gesture support)*
@@ -53,7 +53,7 @@ After everything installs, use `npm run [task]`
   - [Video](https://docs.ult.dev/components/video) *(cross-platform video player with playback controls)*
   - [WebView](https://docs.ult.dev/components/web-view) *(displays HTML contents in an embedded browser or iframe)*
   - [Virtualize](https://docs.ult.dev/components/virtual-view) *(performant scrolling for a large number of items in a list)*
-- ⚙ **Services**
+- ⚙ Services
   - [App](https://docs.ult.dev/services/app) *(provides core methods associated with the application)*
   - [Platform](https://docs.ult.dev/services/platform) *(provides information about the OS or runtime platform)*
   - [International](https://docs.ult.dev/services/international) *(provides interfaces for internationalization)*
