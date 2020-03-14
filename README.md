@@ -27,7 +27,7 @@ After everything installs, use `npm run [task]`
 | npm run build-windows | Build a production Windows executable               |
 
 ### Features
-- ✏ Typed components & styles
+- ✨ Typed components & styles
 - ⚛ Native cross-platform view
 - ♾ Flexible architecture
 - ♿ Great accessibility
