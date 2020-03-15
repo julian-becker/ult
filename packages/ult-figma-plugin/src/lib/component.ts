@@ -20,7 +20,7 @@ export function getCode(component) {
   const writer = new CodeBlockWriter({
     newLine: "\r\n",         // default: "\n"
     useTabs: false,          // default: false
-    useSingleQuote: true,    // default: false
+    useSingleQuote: false,   // default: false
     indentNumberOfSpaces: 2, // default: 4
   });
 
@@ -39,8 +39,14 @@ export function getCode(component) {
     });
   };
 
-  writer.writeLine(`import React from 'react;`);
-  writer.writeLine(`import {${dependencies}} from 'react-ult;`);
+  writer.write('import React from ');
+  writer.quote('react');
+  writer.write(';');
+  writer.newLine();
+  writer.write(`import {${dependencies}} from `);
+  writer.quote('react-ult');
+  writer.write(';');
+  writer.newLine();
   writer.blankLine();
   writer.write(`export function ${name}()`).block(() => {
     writer.write(`return (`).indent(() => {
@@ -103,10 +109,15 @@ function getStyle(component) {
   let styles = {};
 
   if (isComponent || isGroup) {
+    let backgroundColor: string;
+    if (component.backgrounds.length > 0) {
+      const {r, g, b} = component.backgrounds[0].color;
+      backgroundColor = `rgb(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)})`;
+    }
     styles = {
       ...styles,
       flex: 0,
-      backgroundColor: 'rgb(29, 29, 29)', // TODO 
+      backgroundColor,
     };
     /*
       const flexbox = {
@@ -142,8 +153,11 @@ function getStyle(component) {
   }
 
   if (isText) {
-    const {r, g, b} = component.fills[0].color;
-    const rgb = `rgb(${r}, ${g}, ${b})`;
+    let color: string;
+    if (component.fills.length > 0) {
+      const {r, g, b} = component.fills[0].color;
+      color = `rgb(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)})`;
+    }
     const fontSize = component.fontSize;
     const fontFamily = component.fontName.family;
     const isItalic = component.fontName.style.indexOf('Italic') !== -1;
@@ -158,6 +172,7 @@ function getStyle(component) {
   
     styles = {
       ...styles,
+      color,
       // TODO: color: rgb !== 'rgb(0, 0, 0)' ? rgb : undefined,
       letterSpacing: undefined, // TODO
       lineHeight: undefined, // TODO
