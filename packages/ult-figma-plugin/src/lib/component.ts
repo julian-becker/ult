@@ -1,68 +1,6 @@
 import CodeBlockWriter from 'code-block-writer';
 
-// Init
-const {ui, currentPage} = figma;
-figma.showUI(__html__, {width: 400, height: 500});
-figma.on('selectionchange', onSelect);
-figma.on('currentpagechange', onNavigate);
-ui.on('message', onMessage);
-
-// State
-const state = {
-  editorLoaded: false,
-};
-
-// Page changed
-function onNavigate() {
-  figma.closePlugin();
-}
-
-// Message received from UI
-function onMessage(e) {
-  switch (e.type) {
-    case 'editor-init':
-      state.editorLoaded = true;
-      break;
-  }
-}
-
-// Selection changed
-function onSelect() {
-  const {selection} = currentPage;
-  const component = selection.length && getTarget(selection);
-  const code = component && getCode(component);
-  const payload = code ? code : '';
-  console.log(selection, component);
-  ui.postMessage({type: 'editor-value', payload});
-}
-
-// Helper functions
-function getName(value: string) {
-  return value.replace(/\s/g, '');
-}
-
-function getSlug(value: string) {
-  return value.split(' ').map((word, index) => {
-    if (index == 0) return word.toLowerCase();
-    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-  }).join('');
-}
-
-function getTag(type: string) {
-  switch (type) {
-    case 'COMPONENT':
-    case 'GROUP':
-      return 'View';
-    case 'TEXT':
-      return 'Text';
-    case 'IMAGE':
-      return 'Image';
-    default:
-      return 'Unknown';
-  }
-}
-
-function getTarget(selection) {
+export function getTarget(selection) {
   let root = selection[0];
   if (root.type === 'COMPONENT') return selection[0];
 
@@ -74,7 +12,7 @@ function getTarget(selection) {
   return null;
 }
 
-function getCode(component) {
+export function getCode(component) {
   const {code, deps, styles} = getContent([...component.children]);
   const root = {tag: 'View', slug: 'root', style: getStyle(component)};
   const name = getName(component.name);
@@ -102,7 +40,7 @@ function getCode(component) {
   writer.writeLine(`import React from 'react;`);
   writer.writeLine(`import {${dependencies}} from 'react-ult;`);
   writer.blankLine();
-  writer.write(`export function ${name}()`).block(() => {
+  writer.write(`function ${name}()`).block(() => {
     writer.write(`return (`).indent(() => {
       writer.write(`<View style={styles.root}>`).indent(() => {
         writeContents(code);
@@ -122,7 +60,6 @@ function getCode(component) {
     writer.writeLine('}),');
     Object.keys(styles).forEach(slug => {
       const child = styles[slug];
-      console.log(child);
       writer.write(`${slug}: Style.${child.tag}({`).indent(() => {
         Object.keys(child.style).forEach(property => {
           const value = child.style[property];
@@ -232,26 +169,41 @@ function getContent(children, depth = 0, deps = [], styles = {}) {
       deps.push('Text');
     }
 
-    // `<Text style=${style}>${value}</Text>`
     if (isText) {
-      code.push({
-        slug,
-        tag: 'Text',
-        value: child.characters || '',
-      });
+      code.push({slug, tag: 'Text', value: child.characters || ''});
     }
 
-    // `<View style=${style}>${children}</View>`
     if (isGroup) {
       const content = getContent([...child.children], depth + 1, deps, styles);
       styles = {...styles, ...content.styles};
-      code.push({
-        slug,
-        tag: 'View',
-        children: content.code,
-      });
+      code.push({slug, tag: 'View', children: content.code});
     }
   });
 
   return {code, deps, styles};
+}
+
+function getTag(type: string) {
+  switch (type) {
+    case 'COMPONENT':
+    case 'GROUP':
+      return 'View';
+    case 'TEXT':
+      return 'Text';
+    case 'IMAGE':
+      return 'Image';
+    default:
+      return 'Unknown';
+  }
+}
+
+function getName(value: string) {
+  return value.replace(/\s/g, '');
+}
+
+function getSlug(value: string) {
+  return value.split(' ').map((word, index) => {
+    if (index == 0) return word.toLowerCase();
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  }).join('');
 }

@@ -1,7 +1,7 @@
 {
   "name": "ULT · Designer",
   "id": "771784863978373597",
-  "main": "dist/code.js",
+  "main": "dist/plugin.js",
   "ui": "dist/ui.html",
   "api": "1.0.0"
 }

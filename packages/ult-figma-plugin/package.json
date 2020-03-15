@@ -1,14 +1,10 @@
 {
-  "name": "ult-figma-plugin",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "webpack --mode=development --watch",
-    "prod": "webpack --mode=production"
-  },
-  "author": "",
+  "private": true,
   "license": "MIT",
+  "scripts": {
+    "start": "webpack --mode=development --watch",
+    "build": "webpack --mode=production"
+  },
   "dependencies": {
     "code-block-writer": "^10.1.0"
   },
