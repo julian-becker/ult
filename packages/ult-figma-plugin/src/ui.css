@@ -5,8 +5,8 @@ html, body {
 }
 
 iframe {
-  width: 400px;
-  height: 500px;
+  width: 350px;
+  height: 650px;
   border: 0;
   opacity: 0;
   transition: opacity .2s;

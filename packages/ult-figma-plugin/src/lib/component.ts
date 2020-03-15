@@ -19,16 +19,18 @@ export function getCode(component) {
   const dependencies = ['Style', 'View', ...deps].join(', ');
   const writer = new CodeBlockWriter({
     newLine: "\r\n",         // default: "\n"
-    indentNumberOfSpaces: 2, // default: 4
     useTabs: false,          // default: false
-    useSingleQuote: true     // default: false
+    useSingleQuote: true,    // default: false
+    indentNumberOfSpaces: 2, // default: 4
   });
 
   const writeContents = (lines) => {
     lines.forEach((line) => {
       writer.write(`<${line.tag} style={styles.${line.slug}}>`).indent(() => {
         if (line.tag === 'Text') {
-          writer.writeLine(line.value);
+          writer.write('{');
+          writer.quote(line.value);
+          writer.write('}');
         } else if (line.tag === 'View') {
           writeContents(line.children);
         }
@@ -40,7 +42,7 @@ export function getCode(component) {
   writer.writeLine(`import React from 'react;`);
   writer.writeLine(`import {${dependencies}} from 'react-ult;`);
   writer.blankLine();
-  writer.write(`function ${name}()`).block(() => {
+  writer.write(`export function ${name}()`).block(() => {
     writer.write(`return (`).indent(() => {
       writer.write(`<View style={styles.root}>`).indent(() => {
         writeContents(code);
@@ -54,25 +56,43 @@ export function getCode(component) {
     writer.write(`${root.slug}: Style.${root.tag}({`).indent(() => {
       Object.keys(root.style).forEach(property => {
         const value = root.style[property];
-        writer.writeLine(`${property}: ${value},`);
+        if (value !== undefined) {
+          writer.write(`${property}: `);
+          if (typeof value === 'number') {
+            writer.write(value.toString());
+          } else {
+            writer.quote(value);
+          }
+          writer.write(',');
+          writer.newLine();
+        }
       });
     });
     writer.writeLine('}),');
     Object.keys(styles).forEach(slug => {
       const child = styles[slug];
-      writer.write(`${slug}: Style.${child.tag}({`).indent(() => {
-        Object.keys(child.style).forEach(property => {
-          const value = child.style[property];
-          writer.writeLine(`${property}: ${value},`);
+      if (child && child.tag !== 'Unknown') {
+        writer.write(`${slug}: Style.${child.tag}({`).indent(() => {
+          Object.keys(child.style).forEach(property => {
+            const value = child.style[property];
+            if (value !== undefined) {
+              writer.write(`${property}: `);
+              if (typeof value === 'number') {
+                writer.write(value.toString());
+              } else {
+                writer.quote(value);
+              }
+              writer.write(',');
+              writer.newLine();
+            }
+          });
         });
-      });
-      writer.writeLine('}),');
+        writer.writeLine('}),');
+      }
     });
   });
 
-  const contents = writer.toString();
-  component.setPluginData('code', contents);
-  return contents;
+  return writer.toString();
 }
 
 function getStyle(component) {
