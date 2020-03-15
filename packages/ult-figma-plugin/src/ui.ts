@@ -1,12 +1,11 @@
 import './ui.css';
 
-let LOADING = true;
-
 const info = document.getElementById('info');
 const hint = document.getElementById('hint');
 const editor = document.getElementById('editor');
 const loading = document.getElementById('loading');
 
+let LOADING = true;
 window.onmessage = onMessage;
 editor.onload = () => onDispatch({type: 'editor-init'});
 

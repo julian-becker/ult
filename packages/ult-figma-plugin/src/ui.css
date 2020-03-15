@@ -23,6 +23,16 @@ h2 {
   overflow: hidden;
 }
 
+#actions {
+  position: absolute;
+  bottom: 8;
+  right: 10;
+}
+
+#actions > span {
+  cursor: pointer;
+}
+
 #info {
   position: absolute;
   top: 0;
