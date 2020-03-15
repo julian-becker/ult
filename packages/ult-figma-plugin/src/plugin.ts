@@ -1,6 +1,4 @@
-import {getTarget, getCode} from './lib/component';
-
-let LAST_CODE = '';
+import {getCode, getTarget} from './figma';
 
 figma.ui.on('message', onMessage);
 figma.on('selectionchange', onUpdate);
@@ -8,13 +6,17 @@ figma.on('currentpagechange', onNavigate);
 figma.showUI(__html__, {width: 350, height: 650});
 setInterval(onUpdate, 500);
 
+let EDITOR_LOADED = false;
+let EDITOR_VALUE = '';
+
 function onUpdate() {
   const {selection} = figma.currentPage;
-  const target = selection.length && getTarget(selection);
+  const hasSelection = selection.length > 0;
+  const target = hasSelection && getTarget(selection);
   const code = target && getCode(target);
   const payload = code ? code : '';
-  if (payload !== LAST_CODE) {
-    LAST_CODE = payload;
+  if (EDITOR_LOADED && payload !== EDITOR_VALUE) {
+    EDITOR_VALUE = payload;
     figma.ui.postMessage({type: 'editor-value', payload});
   }
 }
@@ -22,7 +24,7 @@ function onUpdate() {
 function onMessage(e: {type: string}) {
   switch (e.type) {
     case 'editor-init':
-      console.log('ULT designer loaded!');
+      EDITOR_LOADED = true;
       break;
   }
 }

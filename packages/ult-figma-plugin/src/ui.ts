@@ -1,61 +1,39 @@
 import './ui.css';
-import './sdk/prism.css';
-import './sdk/prism.js';
 
-let EDITOR = true;
 let LOADING = true;
 
-const loading = document.getElementById('loading');
-const editor = document.getElementById('editor');
-const code = document.getElementById('code');
-const text = document.getElementById('text');
 const info = document.getElementById('info');
 const hint = document.getElementById('hint');
+const editor = document.getElementById('editor');
+const loading = document.getElementById('loading');
 
-window.onmessage = message;
+window.onmessage = onMessage;
+editor.onload = () => onDispatch({type: 'editor-init'});
 
-if (editor) {
-  editor.onload = () => dispatch({type: 'editor-init'});
-} else {
-  EDITOR = false;
-  LOADING = false;
-  dispatch({type: 'editor-init'});
-}
-
-function message(e: any) {
+function onMessage(e: any) {
   const {type, payload} = e.data.pluginMessage;
   switch (type) {
     case 'editor-value':
-      if (EDITOR) {
-        if (LOADING) editor.style.opacity = '1.0';
-        LOADING = !payload;
-        frames['editor'].postMessage(`\n${payload}\n`, '*');
-        if (LOADING) {
-          info.style.display = '';
-          hint.style.display = '';
-        } else {
-          info.style.display = 'none';
-        }
+      if (LOADING) editor.style.opacity = '1.0';
+      LOADING = !payload;
+      frames['editor'].postMessage(`\n${payload}\n`, '*');
+      if (LOADING) {
+        info.style.display = '';
+        hint.style.display = '';
       } else {
-        code.style.display = '';
-        text.textContent = `\n${payload}\n`;
-        if (window['Prism']) {
-          window['Prism'].highlightElement(text);
-        }
+        info.style.display = 'none';
       }
       break;
   }
 }
 
-function dispatch(e: any) {
+function onDispatch(e: any) {
   const {type, payload} = e;
+  parent.postMessage({pluginMessage: {type, payload}}, '*');
   switch (type) {
     case 'editor-init':
       loading.style.display = 'none';
       hint.style.display = 'flex';
       break;
   }
-  parent.postMessage({
-    pluginMessage: {type, payload},
-  }, '*');
 }

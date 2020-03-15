@@ -1,17 +1,5 @@
 import CodeBlockWriter from 'code-block-writer';
 
-export function getTarget(selection) {
-  let root = selection[0];
-  if (root.type === 'COMPONENT') return selection[0];
-
-  while (root.parent && root.parent.type !== 'PAGE') {
-    root = root.parent;
-    if (root.type === 'COMPONENT') return root;
-  }
-
-  return null;
-}
-
 export function getCode(component) {
   const {code, deps, styles} = getContent([...component.children]);
   const root = {tag: 'View', slug: 'root', style: getStyle(component)};
@@ -99,6 +87,16 @@ export function getCode(component) {
   });
 
   return writer.toString();
+}
+
+export function getTarget(selection: readonly SceneNode[]) {
+  let root: SceneNode | DocumentNode & ChildrenMixin = selection[0];
+  if (root.type === 'COMPONENT') return selection[0];
+  while (root.parent && root.parent.type !== 'PAGE') {
+    root = root.parent;
+    if (root.type === 'COMPONENT') return root;
+  }
+  return null;
 }
 
 function getStyle(component) {
