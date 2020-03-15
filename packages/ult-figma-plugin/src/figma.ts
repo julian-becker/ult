@@ -47,10 +47,13 @@ export function getCode(component) {
   });
   writer.blankLine();
   writer.write(`const styles = `).block(() => {
-    writer.write(`${root.slug}: Style.${root.tag}({`).indent(() => {
-      Object.keys(root.style).forEach(property => {
-        const value = root.style[property];
-        if (value !== undefined) {
+    const properties = Object
+      .keys(root.style)
+      .filter(c => root.style[c] !== undefined);
+    if (properties.length > 0) {
+      writer.write(`${root.slug}: Style.${root.tag}({`).indent(() => {
+        properties.forEach(property => {
+          const value = root.style[property];
           writer.write(`${property}: `);
           if (typeof value === 'number') {
             writer.write(value.toString());
@@ -59,17 +62,20 @@ export function getCode(component) {
           }
           writer.write(',');
           writer.newLine();
-        }
+        });
       });
-    });
-    writer.writeLine('}),');
+      writer.writeLine('}),');
+    }
     Object.keys(styles).forEach(slug => {
       const child = styles[slug];
       if (child && child.tag !== 'Unknown') {
-        writer.write(`${slug}: Style.${child.tag}({`).indent(() => {
-          Object.keys(child.style).forEach(property => {
-            const value = child.style[property];
-            if (value !== undefined) {
+        const properties = Object
+          .keys(child.style)
+          .filter(c => child.style[c] !== undefined);
+        if (properties.length > 0) {
+          writer.write(`${slug}: Style.${child.tag}({`).indent(() => {
+            properties.forEach(property => {
+              const value = child.style[property];
               writer.write(`${property}: `);
               if (typeof value === 'number') {
                 writer.write(value.toString());
@@ -78,10 +84,10 @@ export function getCode(component) {
               }
               writer.write(',');
               writer.newLine();
-            }
+            });
           });
-        });
-        writer.writeLine('}),');
+          writer.writeLine('}),');
+        }
       }
     });
   });
@@ -114,7 +120,6 @@ function getStyle(component) {
     }
     styles = {
       ...styles,
-      flex: 0,
       backgroundColor,
     };
     /*
@@ -171,11 +176,10 @@ function getStyle(component) {
     styles = {
       ...styles,
       color,
-      // TODO: color: rgb !== 'rgb(0, 0, 0)' ? rgb : undefined,
-      letterSpacing: undefined, // TODO
-      lineHeight: undefined, // TODO
       fontSize,
       // fontFamily,
+      letterSpacing: undefined, // TODO
+      lineHeight: undefined, // TODO
       fontStyle: isItalic ? 'italic' : undefined,
       fontWeight: isBold ? '700' : isThin ? '300' : undefined,
       textAlign: isAlignLeft ? 'left' : isAlignRight ? 'right' : undefined,
