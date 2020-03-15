@@ -91,14 +91,3 @@ Join the discussion in [Discord](https://discord.gg/TzhDRyj)!
 ### Sponsors
 
 Fund development by being a [Sponsor](https://github.com/sponsors/Cavitt)!
-
-### FAQ
-
-<details>
-  <summary>Why choose React over XYZ?</summary>
-  <ul>
-    <li>Most other options are specific to the web.</li>
-    <li>Flutter doesn't support desktop, and while the code is native, it only emulates native UI.</li>
-    <li>No other framework lets us natively target desktop and mobile, while maintaining web support.</li>
-  </ul>
-</details>
